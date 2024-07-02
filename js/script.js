@@ -1,12 +1,12 @@
-// Inicialización de arrays vacíos
+//arrays vacíos
 const usuarios = [];
 const citas = [];
 
-// Inicialización de variables numéricas
+// variables numéricas
 let idUsuarioCounter = 0;
 let idCitaCounter = 0;
 
-// Inicialización de variables de texto
+// variables de texto
 let nombreUsuario = '';
 let apellidoUsuario = '';
 let edadUsuario = '';
@@ -19,7 +19,7 @@ let correoUsuario = '';
 let telefonoUsuario = '';
 
 // Función de mensaje de despedida
-const mensajeDespedida = () => alert('Gracias por la confianza, Nos vemos luego');
+const mensajeDespedida = () => alert('Gracias por la confianza, Nos vemos luego!');
 
 // Función que genera IDs únicos
 const generarUsuarioID = () => idUsuarioCounter++;
