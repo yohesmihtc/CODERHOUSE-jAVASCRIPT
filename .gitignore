@@ -1,0 +1,39 @@
+# Archivos y directorios de entorno
+node_modules/
+.env
+
+# Archivos de compilación
+dist/
+build/
+out/
+
+# Archivos de configuración del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de logs
+*.log
+
+# Archivos temporales
+*.tmp
+*.swp
+
+# Archivos de configuración de IDEs
+.vscode/
+.idea/
+
+# Archivos de dependencias de Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Archivos de dependencias de Java
+target/
+*.class
+
+# Archivos de dependencias de C#
+bin/
+obj/
+
+# Archivos de configuración de Docker
+docker-compose.override.yml

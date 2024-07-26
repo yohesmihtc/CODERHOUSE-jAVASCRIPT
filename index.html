@@ -5,10 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="/js/script.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
     <title>PROYECTO CODERHOUSE</title>
 </head>
-<body>
-    <h1>PREENTREGA-1 YOHESMIHT COLMENAREZ</h1>
-    <p>Este proyecto es basado en el mismo tema de mi proyecto de DESARROLLO WEB-TSL-https://thestrengthlabtsl.com/, una pagina de fitness, para agendar citas de entrenamientos personalizados y mas adelante, tambien una tienda</p>
+<h1>Quieres agendar una avaliacion?</h1>
+    <form id="formularioUsuario">
+        <label for="nombreUsuario">Por favor, ingresa tu nombre:</label>
+        <input type="text" id="nombreUsuario" required><br>
+
+        <label for="apellidoUsuario">Por favor, ingresa tu apellido:</label>
+        <input type="text" id="apellidoUsuario" required><br>
+
+        <label for="edadUsuario">Ingresa tu edad:</label>
+        <input type="number" id="edadUsuario" required><br>
+
+        <label for="estaturaUsuario">Ingresa tu estatura en cm:</label>
+        <input type="number" id="estaturaUsuario" required><br>
+
+        <label for="generoUsuario">Ingresa tu género:</label>
+        <select id="generoUsuario" required>
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+        </select><br>
+
+        <label for="objetivoUsuario">¿Cuál es tu objetivo?</label>
+        <select id="objetivoUsuario" required>
+            <option value="Ganar masa muscular">Ganar masa muscular</option>
+            <option value="Perder peso">Perder peso</option>
+            <option value="Ganar masa muscular y quemar grasa">Ganar masa muscular y quemar grasa</option>
+        </select><br>
+
+        <label for="fechaCita">Fecha de la cita:</label>
+        <input type="date" id="fechaCita" required><br>
+
+        <label for="horaCita">Hora de la cita:</label>
+        <input type="time" id="horaCita" required><br>
+
+        <label for="correoUsuario">Correo electrónico:</label>
+        <input type="email" id="correoUsuario" required><br>
+
+        <label for="telefonoUsuario">Número de teléfono:</label>
+        <input type="tel" id="telefonoUsuario" required><br>
+
+        <button type="submit">Agendar Cita</button>
+    </form>
+
+    <p id="mensajeExito" style="display:none;">Su cita fue agendada con éxito.</p>
+
+    <script src="script.js"></script>
 </body>
 </html>
