@@ -7,12 +7,12 @@ let idCitaCounter = 0;
 const generarUsuarioID = () => idUsuarioCounter++;
 const generarCitaID = () => idCitaCounter++;
 
-// Función de orden superior para guardar en Local Storage
+// Funcion de orden superior para guardar en Local Storge
 const guardarEnStorage = (clave, valor) => {
     localStorage.setItem(clave, JSON.stringify(valor));
 };
 
-// Función de orden superior para borrar del Local Storage
+// Funcion de orden superior para borrar del Local Storage
 const borrarDeStorage = (clave) => {
     localStorage.removeItem(clave);
 };
@@ -52,17 +52,17 @@ document.getElementById('formularioUsuario').addEventListener('submit', (e) => {
     };
     citas.push(cita);
 
-    // Guardar citas en Local Storage
+    // Guardar citas en el Local Storage
     guardarEnStorage('citas', citas);
 
     document.getElementById('mensajeExito').style.display = 'block';
     document.getElementById('mensajeExito').innerText = `Su cita fue agendada con éxito para el ${fechaCita} a las ${horaCita}.`;
 });
 
-// Evento para borrar citas
+// Evinto para borrar citas
 document.getElementById('borrarCitas').addEventListener('click', () => {
     borrarDeStorage('citas');
-    citas.length = 0; // Vaciar el array de citas
+    citas.length = 0; // Vacier el array de citas
 
     const mensajeBorrado = document.getElementById('mensajeBorrado');
     mensajeBorrado.style.display = 'block';
