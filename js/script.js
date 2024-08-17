@@ -7,14 +7,22 @@ let idCitaCounter = 0;
 const generarUsuarioID = () => idUsuarioCounter++;
 const generarCitaID = () => idCitaCounter++;
 
-// Funcion de orden superior para guardar en Local Storge
-const guardarEnStorage = (clave, valor) => {
-    localStorage.setItem(clave, JSON.stringify(valor));
-};
+// Función para validar la fecha y hora de la cita
+const esCitaValida = (fecha, hora) => {
+    const diaSemana = new Date(fecha).getDay();
+    const horaCita = parseInt(hora.split(':')[0]);
 
-// Funcion de orden superior para borrar del Local Storage
-const borrarDeStorage = (clave) => {
-    localStorage.removeItem(clave);
+    // Verificar que la cita sea de lunes a viernes
+    if (diaSemana === 0 || diaSemana === 6) {
+        return false;
+    }
+
+    // Verificar que la cita sea entre las 8 AM y 12 PM, o entre las 2 PM y 6 PM
+    if ((horaCita >= 8 && horaCita < 12) || (horaCita >= 14 && horaCita < 18)) {
+        return true;
+    }
+
+    return false;
 };
 
 document.getElementById('formularioUsuario').addEventListener('submit', (e) => {
@@ -30,6 +38,34 @@ document.getElementById('formularioUsuario').addEventListener('submit', (e) => {
     const horaCita = document.getElementById('horaCita').value;
     const correoUsuario = document.getElementById('correoUsuario').value;
     const telefonoUsuario = document.getElementById('telefonoUsuario').value;
+
+    const mensajeExito = document.getElementById('mensajeExito');
+    const mensajeError = document.getElementById('mensajeError');
+
+    // Limpiar mensajes anteriores
+    mensajeExito.style.display = 'none';
+    mensajeError.style.display = 'none';
+
+    // Validar la fecha y hora de la cita
+    if (!esCitaValida(fechaCita, horaCita)) {
+        mensajeError.style.display = 'block';
+        mensajeError.innerText = 'Las citas solo pueden agendarse de lunes a viernes, de 8 AM a 12 PM y de 2 PM a 6 PM.';
+        return;
+    }
+
+    // Validar la edad del usuario
+    if (edadUsuario < 15) {
+        mensajeError.style.display = 'block';
+        mensajeError.innerText = 'La edad mínima para agendar una cita es de 15 años.';
+        return;
+    }
+
+    // Validar la estatura del usuario
+    if (estaturaUsuario < 100) {
+        mensajeError.style.display = 'block';
+        mensajeError.innerText = 'La estatura mínima para agendar una cita es de 100 cm.';
+        return;
+    }
 
     const usuario = {
         id: generarUsuarioID(),
@@ -52,19 +88,27 @@ document.getElementById('formularioUsuario').addEventListener('submit', (e) => {
     };
     citas.push(cita);
 
-    // Guardar citas en el Local Storage
+    // Guardar citas en Local Storage
     guardarEnStorage('citas', citas);
 
-    document.getElementById('mensajeExito').style.display = 'block';
-    document.getElementById('mensajeExito').innerText = `Su cita fue agendada con éxito para el ${fechaCita} a las ${horaCita}.`;
+    // Mostrar mensaje de éxito
+    mensajeExito.style.display = 'block';
+    mensajeExito.innerText = `Su cita fue agendada con éxito para el ${fechaCita} a las ${horaCita}.`;
 });
 
-// Evinto para borrar citas
+// Evento para borrar citas
 document.getElementById('borrarCitas').addEventListener('click', () => {
-    borrarDeStorage('citas');
-    citas.length = 0; // Vacier el array de citas
+    borrarTodoStorage();
+    citas.length = 0; // Vaciar el array de citas
 
     const mensajeBorrado = document.getElementById('mensajeBorrado');
     mensajeBorrado.style.display = 'block';
     mensajeBorrado.innerText = 'Todas las citas han sido borradas.';
+});
+
+// Ejemplo de uso de la función obtenerDatos
+obtenerDatos('citas.json').then(data => {
+    if (data) {
+        console.log('Datos obtenidos:', data);
+    }
 });

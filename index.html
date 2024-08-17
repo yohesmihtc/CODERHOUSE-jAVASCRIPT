@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
+    <script defer src="js/storage.js"></script>
     <script defer src="js/script.js"></script>
-    
     <title>PROYECTO CODERHOUSE</title>
 </head>
 <body>
 <div>
-    <h1>Quieres agendar una avaliacion?</h1>
+    <h1>Quieres agendar una evaluación?</h1>
     
     <form id="formularioUsuario">
         <ul>
@@ -29,25 +29,27 @@
             </li>
             <li>
                 <label for="estaturaUsuario">Ingresa tu estatura en cm:</label>
-                <input type="number" id="estaturaUsuario" required><br></li>
+                <input type="number" id="estaturaUsuario" required><br>
+            </li>
             <li>
                 <label for="generoUsuario">Ingresa tu género:</label>
                 <select id="generoUsuario" required>
-                <option value="hombre">Hombre</option>
-                <option value="mujer">Mujer</option>
+                    <option value="hombre">Hombre</option>
+                    <option value="mujer">Mujer</option>
                 </select><br>
             </li>
             <li>
                 <label for="objetivoUsuario">¿Cuál es tu objetivo?</label>
                 <select id="objetivoUsuario" required>
-                <option value="Ganar masa muscular">Ganar masa muscular</option>
-                <option value="Perder peso">Perder peso</option>
-                <option value="Ganar masa muscular y quemar grasa">Ganar masa muscular y quemar grasa</option>
+                    <option value="Ganar masa muscular">Ganar masa muscular</option>
+                    <option value="Perder peso">Perder peso</option>
+                    <option value="Ganar masa muscular y quemar grasa">Ganar masa muscular y quemar grasa</option>
                 </select><br>
             </li>
             <li>
                 <label for="fechaCita">Fecha de la cita:</label>
-                <input type="date" id="fechaCita" required><br></li>
+                <input type="date" id="fechaCita" required><br>
+            </li>
             <li>
                 <label for="horaCita">Hora de la cita:</label>
                 <input type="time" id="horaCita" required><br>
@@ -66,8 +68,9 @@
     </form>
 
     <button id="borrarCitas">Borrar Citas</button>
-    <p id="mensajeExito" style="display:none;">Su cita fue agendada con éxito.</p>
-    <p id="mensajeBorrado" style="display:none;">Todas las citas han sido borradas.</p>
+    <p id="mensajeExito" style="display:none; color: green;"></p>
+    <p id="mensajeError" style="display:none; color: red;"></p>
+    <p id="mensajeBorrado" style="display:none; color: blue;"></p>
 </div>
 </body>
 </html>

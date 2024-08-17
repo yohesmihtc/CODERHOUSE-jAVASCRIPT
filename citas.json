@@ -1,0 +1,18 @@
+[
+    {
+        "id": 0,
+        "idUsuario": 0,
+        "fecha": "2023-10-01",
+        "hora": "10:00",
+        "correo": "ejemplo@correo.com",
+        "telefono": "123456789"
+    },
+    {
+        "id": 1,
+        "idUsuario": 1,
+        "fecha": "2023-10-02",
+        "hora": "11:00",
+        "correo": "ejemplo2@correo.com",
+        "telefono": "987654321"
+    }
+]
