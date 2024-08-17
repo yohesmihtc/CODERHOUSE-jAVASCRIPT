@@ -7,7 +7,7 @@ let idCitaCounter = 0;
 const generarUsuarioID = () => idUsuarioCounter++;
 const generarCitaID = () => idCitaCounter++;
 
-// Función para validar la fecha y hora de la cita
+// Funcion para validar la fecha y hora de la ciita
 const esCitaValida = (fecha, hora) => {
     const diaSemana = new Date(fecha).getDay();
     const horaCita = parseInt(hora.split(':')[0]);
@@ -17,7 +17,7 @@ const esCitaValida = (fecha, hora) => {
         return false;
     }
 
-    // Verificar que la cita sea entre las 8 AM y 12 PM, o entre las 2 PM y 6 PM
+    // Verificar que la cita sea entre las 8 AM y 12 PM o entre las 2 PM y 6 PM
     if ((horaCita >= 8 && horaCita < 12) || (horaCita >= 14 && horaCita < 18)) {
         return true;
     }
@@ -91,7 +91,7 @@ document.getElementById('formularioUsuario').addEventListener('submit', (e) => {
     // Guardar citas en Local Storage
     guardarEnStorage('citas', citas);
 
-    // Mostrar mensaje de éxito
+    // Mosttrar mensaje de exito
     mensajeExito.style.display = 'block';
     mensajeExito.innerText = `Su cita fue agendada con éxito para el ${fechaCita} a las ${horaCita}.`;
 });
@@ -99,14 +99,14 @@ document.getElementById('formularioUsuario').addEventListener('submit', (e) => {
 // Evento para borrar citas
 document.getElementById('borrarCitas').addEventListener('click', () => {
     borrarTodoStorage();
-    citas.length = 0; // Vaciar el array de citas
+    citas.length = 0; // Vciar el rray de citas
 
     const mensajeBorrado = document.getElementById('mensajeBorrado');
     mensajeBorrado.style.display = 'block';
     mensajeBorrado.innerText = 'Todas las citas han sido borradas.';
 });
 
-// Ejemplo de uso de la función obtenerDatos
+// Ejemplo de uuso de la funcion obtenerDatos
 obtenerDatos('citas.json').then(data => {
     if (data) {
         console.log('Datos obtenidos:', data);

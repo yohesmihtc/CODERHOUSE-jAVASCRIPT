@@ -15,13 +15,13 @@ div {
     left: 0;
     right: 0;
     text-align: center;
-    z-index: 1; /* Ajustar z-index para no interferir con SweetAlert2 */
+    z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     gap: 10px;
-    position: relative; /* Asegurar que el z-index funcione correctamente */
+    position: relative;
 }
 
 div form {
@@ -40,15 +40,4 @@ form ul li {
     align-items: center;
 }
 
-/* Estilos para asegurar que el modal de SweetAlert2 esté por encima de otros elementos */
-.swal2-container {
-    z-index: 9999 !important;
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+

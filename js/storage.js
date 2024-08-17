@@ -1,14 +1,14 @@
-// Función de orden superior para guardar en Local Storage
+// Funcioon de orden superior para guardar en Local Storage
 const guardarEnStorage = (clave, valor) => {
     localStorage.setItem(clave, JSON.stringify(valor));
 };
 
-// Función de orden superior para borrar del Local Storage
+// Funcion de orden superior para borrar del Local Storage
 const borrarDeStorage = (clave) => {
     localStorage.removeItem(clave);
 };
 
-// Función para obtener datos de un archivo JSON local
+// Funcion para obtener datos de un archivo JSON local
 const obtenerDatos = async (url) => {
     try {
         const response = await fetch(url);
