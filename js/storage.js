@@ -8,7 +8,7 @@ const borrarDeStorage = (clave) => {
     localStorage.removeItem(clave);
 };
 
-// Funcion para obtener datos de un archivo JSON local
+// Funcion para obtener datos de un archivo jsn local
 const obtenerDatos = async (url) => {
     try {
         const response = await fetch(url);

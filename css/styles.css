@@ -9,11 +9,8 @@ div {
     background-color: #F2F2F2;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 10px;  
-    padding: 20px;
-    margin: 50px;
-    top: 0;
-    left: 0;
-    right: 0;
+    padding: 10px;
+    margin: 50px 100px;
     text-align: center;
     z-index: 1;
     display: flex;
@@ -21,23 +18,65 @@ div {
     justify-content: space-between;
     align-items: center;
     gap: 10px;
-    position: relative;
 }
 
 div form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
 }
 
 form ul li {
     margin: 0;
-    padding: 10px;
+    padding: 10px 10px 0 0; 
     font-size: 20px;
     list-style: none;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    
 }
 
+form ul li input {
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #4E5242;
+    border-radius: 5px;
+}
+form ul li select {
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #4E5242;
+    border-radius: 5px;
+}
+
+
+#formularioUsuario button {
+    padding: 10px;
+    font-size: 20px;
+    background-color: #4E5242;
+    color: #F2F2F2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#formularioUsuario button:hover {
+    background-color: #000000;
+    color: #dddddd;
+}
+
+
+#borrarCitas{
+    padding: 10px;
+    font-size: 10px;
+    background-color: #000000;
+    color: #F2F2F2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button#borrarCitas:hover {
+    background-color: #b90000;
+    color: #000000;
+}
 
